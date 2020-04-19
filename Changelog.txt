@@ -1,0 +1,12 @@
+Oversight 2D
+
+Alpha 0.1.0-a (04-19-2020)
+- Initialize basic window
+- Crop and read images
+- Load and store assets
+- Fps control
+- Game States
+- Entities
+- Keyboard Controls
+- Entity Scale
+- Tiles

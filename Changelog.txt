@@ -1,5 +1,10 @@
 Oversight 2D
 
+Alpha 0.1.0-a1 (04-20-2020)
+- Worlds
+- Improved Movement
+- Centered player
+
 Alpha 0.1.0-a (04-19-2020)
 - Initialize basic window
 - Crop and read images

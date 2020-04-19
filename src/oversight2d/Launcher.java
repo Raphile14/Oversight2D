@@ -8,10 +8,10 @@ import oversight2d.display.Display;
  */
 public class Launcher {
     private static String version = "Oversight Alpha 0.1.0";
+    private static int width = 1280, height = 720;
 
     public static void main(String[] args) {
-        Game game = new Game(version, 1280, 720);
-        game.start();
-    }
-    
+        Game game = new Game(version, width, height);
+        game.start();        
+    }            
 }

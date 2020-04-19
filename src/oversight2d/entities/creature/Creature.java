@@ -26,10 +26,10 @@ public abstract class Creature extends Entity {
         yMove = 0;
     }
     
-    public void move() {
-        x += xMove;
-        y += yMove;
-    }
+//    public void move() {
+//        x += xMove;
+//        y += yMove;
+//    }
 
     // Getters and Setters
     public int getHealth() {

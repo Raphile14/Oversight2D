@@ -14,7 +14,7 @@ public class Display {
     private Canvas canvas;
     
     private String title;
-    private int width, height;
+    private static int width, height;
     
     public Display(String title, int width, int height) {
         this.title = title;
@@ -46,5 +46,13 @@ public class Display {
     
     public JFrame getFrame() {
         return frame;
+    }
+    
+    public static int getWidth() {
+        return width;
+    }
+
+    public static int getHeight() {
+        return height;
     }
 }

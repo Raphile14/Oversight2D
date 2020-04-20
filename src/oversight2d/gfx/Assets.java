@@ -10,18 +10,33 @@ public class Assets {
     
     private static final int width = 60, height = 60;
     
-    public static BufferedImage walkDown, walkLeft, walkRight, walkTop, menu,
-                                dirt, stone, sand, grass, gold, diamond, coal;
+    public static BufferedImage menu, dirt, stone, sand, grass, gold, diamond, coal;
+    
+    public static BufferedImage[] player_down, player_up, player_left, player_right;
     
     public static void init() {
         SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/oversight2d/textures/testSprite.png"));
         SpriteSheet sheet2 = new SpriteSheet(ImageLoader.loadImage("/oversight2d/textures/menu.jpg"));
         SpriteSheet sheet3 = new SpriteSheet(ImageLoader.loadImage("/oversight2d/textures/minecraft.png"));
         
-        walkDown = sheet.crop(0, 0, width, height);
-        walkLeft = sheet.crop(0, height, width, height);
-        walkRight = sheet.crop(0, height * 2, width, height);
-        walkTop = sheet.crop(0, height * 3, width, height);
+        // Walk Animation
+        player_down = new BufferedImage[8];        
+        player_left = new BufferedImage[8];
+        player_right = new BufferedImage[8];
+        player_up = new BufferedImage[8];
+        
+        for (int x = 0; x < 8; x++) {
+            player_down[x] = sheet.crop(x * width, 0, width, height);            
+            player_left[x] = sheet.crop(x * width, height, width, height);
+            player_right[x] = sheet.crop(x * width, height * 2, width, height);
+            player_up[x] = sheet.crop(x * width, height * 3, width, height);
+        }
+        
+//        for (int x = 0; x < 8; x++) {         
+//            player_left[x] = sheet.crop(x * width, height, width, height);
+//        }
+        
+        
         menu = sheet2.crop(0, 0, width * 3, height * 3);
         
         dirt = sheet3.crop(80, 0, 80, 80);

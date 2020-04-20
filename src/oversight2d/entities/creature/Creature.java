@@ -12,7 +12,7 @@ import oversight2d.tiles.Tile;
 public abstract class Creature extends Entity {
     
     public static final int DEFAULT_HEALTH = 10;
-    public static final float DEFAULT_SPEED = 10.0f;
+    public static final float DEFAULT_SPEED = 5.0f;
     public static final int DEFAULT_CREATURE_WIDTH = 64,
                             DEFAULT_CREATURE_HEIGHT = 64;
     

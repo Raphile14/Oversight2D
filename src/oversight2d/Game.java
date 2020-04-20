@@ -8,6 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import oversight2d.display.Display;
 import oversight2d.gfx.Assets;
+import oversight2d.gfx.GameCamera;
 import oversight2d.gfx.ImageLoader;
 import oversight2d.gfx.SpriteSheet;
 import oversight2d.input.KeyManager;
@@ -23,7 +24,7 @@ import oversight2d.states.State;
 public class Game implements Runnable {
     
     private Display display;    
-    public int width, height;
+    private int width, height;
     public String title;
     
     private boolean running = false;
@@ -40,6 +41,12 @@ public class Game implements Runnable {
     // Input
     private KeyManager keyManager;
     
+    // Camera
+    private GameCamera gameCamera;
+    
+    // Handler
+    private Handler handler;
+    
     public Game(String title, int width, int height) {
         this.width = width;
         this.height = height;              
@@ -51,10 +58,12 @@ public class Game implements Runnable {
         display = new Display(title, width, height);
         display.getFrame().addKeyListener(keyManager);
         Assets.init();
-        
-        gameState = new GameState(this);
-        menuState = new MainMenuState(this);
-        settingsState = new SettingsState(this);
+                
+        handler = new Handler(this);
+        gameCamera = new GameCamera(handler, 0, 0);    
+        gameState = new GameState(handler);
+        menuState = new MainMenuState(handler);
+        settingsState = new SettingsState(handler);
         State.setState(gameState);
     }
     
@@ -124,6 +133,18 @@ public class Game implements Runnable {
     
     public KeyManager getKeyManager() {
         return keyManager;
+    }
+    
+    public GameCamera getGameCamera() {
+        return gameCamera;
+    }
+    
+    public int getWidth() {
+        return width;
+    }
+    
+    public int getHeight() {
+        return height;
     }
     
     public synchronized void start() {

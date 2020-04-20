@@ -2,6 +2,7 @@ package oversight2d.states;
 
 import java.awt.Graphics;
 import oversight2d.Game;
+import oversight2d.Handler;
 import oversight2d.entities.creature.Player;
 import oversight2d.gfx.Assets;
 import oversight2d.tiles.Tile;
@@ -16,16 +17,17 @@ public class GameState extends State {
     private Player player;
     private World world;
 
-    public GameState(Game game) {
-        super(game);
-        world = new World("");
-        player = new Player(game, world, 100, 100);        
+    public GameState(Handler handler) {
+        super(handler);        
+        world = new World(handler, "resources/oversight2d/worlds/world1.txt"); 
+        handler.setWorld(world);
+        player = new Player(handler, 100, 100);               
     }
     
     @Override
     public void tick() {
         world.tick();
-        player.tick();
+        player.tick();        
     }
 
     @Override

@@ -2,6 +2,7 @@ package oversight2d.states;
 
 import java.awt.Graphics;
 import oversight2d.Game;
+import oversight2d.Handler;
 import oversight2d.gfx.Assets;
 
 /**
@@ -10,8 +11,8 @@ import oversight2d.gfx.Assets;
  */
 public class MainMenuState extends State {
     
-    public MainMenuState(Game game) {
-        super(game);
+    public MainMenuState(Handler handler) {
+        super(handler);
     }
     
     @Override

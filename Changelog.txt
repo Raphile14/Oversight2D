@@ -1,5 +1,11 @@
 Oversight 2D
 
+Alpha 0.1.0-a2 (04-20-2020)
+- Camera with Limits
+- More efficient map rendering
+- Handler
+- Collision
+
 Alpha 0.1.0-a1 (04-20-2020)
 - Worlds
 - Improved Movement

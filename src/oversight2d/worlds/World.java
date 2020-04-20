@@ -3,6 +3,9 @@ package oversight2d.worlds;
 import java.awt.Graphics;
 import oversight2d.Game;
 import oversight2d.Handler;
+import oversight2d.entities.EntityManager;
+import oversight2d.entities.creature.Player;
+import oversight2d.entities.statics.Tree;
 import oversight2d.tiles.Tile;
 import oversight2d.utils.Utils;
 
@@ -17,11 +20,18 @@ public class World {
     private int spawnX, spawnY;
     private int[][] tiles;
     
-    protected float xMove, yMove;
+    // Entities
+    private EntityManager entityManager;   
     
     public World(Handler handler, String path) {
         this.handler = handler;
+        entityManager = new EntityManager(handler, new Player(handler, 100, 100));
+        entityManager.addEntity(new Tree(handler, 100, 250));
+        
         loadWorld(path);        
+        
+        entityManager.getPlayer().setX(spawnX);
+        entityManager.getPlayer().setY(spawnY);
     }
     
     public void move() {
@@ -29,7 +39,7 @@ public class World {
     }
     
     public void tick() {
-        
+        entityManager.tick();
     }
     
     public void render(Graphics g) {
@@ -45,6 +55,9 @@ public class World {
                         (int) (y * Tile.TILE_HEIGHT - handler.getGameCamera().getyOffset()));
             }
         }
+        
+        // Entities
+        entityManager.render(g);
     }            
     
     public Tile getTile(int x, int y) {

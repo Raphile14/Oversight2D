@@ -1,5 +1,8 @@
 Oversight 2D
 
+Alpha 0.1.0-a4 (04-20-2020)
+- Entity Manager
+
 Alpha 0.1.0-a3 (04-20-2020)
 - Animation
 

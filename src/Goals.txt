@@ -1,0 +1,19 @@
+Oversight 2D
+
+Goals
+- A* Path finding
+- Perlin Noise Procedural World Generation
+- Generate and save worlds in .txt formats (or better)
+- NPC Livestock, NPC Aliens, and NPC Monsters
+- Add NPC AI Activities
+- Mining, and Agriculture
+- Trees, Static Entities
+- Food (Nutrient System - Protein, Carbohydrates, etc) 
+- Hydration
+- Stamina mechanics (fatigue, adrenaline, etc)
+- Tools, and Weapons
+- Technology and processing
+- Planets
+
+Done
+-

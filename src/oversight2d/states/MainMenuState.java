@@ -4,6 +4,9 @@ import java.awt.Graphics;
 import oversight2d.Game;
 import oversight2d.Handler;
 import oversight2d.gfx.Assets;
+import oversight2d.ui.ClickListener;
+import oversight2d.ui.UIImageButton;
+import oversight2d.ui.UIManager;
 
 /**
  *
@@ -11,17 +14,30 @@ import oversight2d.gfx.Assets;
  */
 public class MainMenuState extends State {
     
+    private UIManager uiManager;
+    
     public MainMenuState(Handler handler) {
         super(handler);
-    }
+        uiManager = new UIManager(handler);
+        handler.getMouseManager().setUIManager(uiManager);
+        
+        uiManager.addObject(new UIImageButton(200, 200, 128, 64, Assets.player_down, new ClickListener() {
+            @Override
+            public void onClick() {
+                handler.getMouseManager().setUIManager(null);
+                State.setState(handler.getGame().gameState);
+            }
+        }));
+        
+    };
     
     @Override
     public void tick() {
-        
+        uiManager.tick();
     }
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Assets.menu, 0, 0, null);
+        uiManager.render(g);
     }
 }

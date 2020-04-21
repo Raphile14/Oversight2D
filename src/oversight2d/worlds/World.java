@@ -96,6 +96,10 @@ public class World {
     public int getHeight() {
         return height;
     }
+
+    public EntityManager getEntityManager() {
+        return entityManager;
+    }
     
     
 }

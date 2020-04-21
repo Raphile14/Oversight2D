@@ -10,9 +10,10 @@ public class Assets {
     
     private static final int width = 60, height = 60;
     
-    public static BufferedImage menu, dirt, stone, sand, grass, gold, diamond, coal;
+    public static BufferedImage dirt, stone, sand, grass, gold, diamond, coal;
     
-    public static BufferedImage[] player_down, player_up, player_left, player_right;
+    public static BufferedImage[] player_down, player_up, player_left, player_right,
+                                  menu;
     
     public static void init() {
         SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/oversight2d/textures/testSprite.png"));
@@ -37,7 +38,8 @@ public class Assets {
 //        }
         
         
-        menu = sheet2.crop(0, 0, width * 3, height * 3);
+//        menu[0] = sheet2.crop(0, 0, width * 3, height * 3);
+//        menu[1] = sheet2.crop(width, 0, width * 3, height * 3);
         
         dirt = sheet3.crop(80, 0, 80, 80);
         stone = sheet3.crop(160, 0, 80, 80);

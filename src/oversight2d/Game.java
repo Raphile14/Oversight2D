@@ -12,6 +12,7 @@ import oversight2d.gfx.GameCamera;
 import oversight2d.gfx.ImageLoader;
 import oversight2d.gfx.SpriteSheet;
 import oversight2d.input.KeyManager;
+import oversight2d.input.MouseManager;
 import oversight2d.states.GameState;
 import oversight2d.states.MainMenuState;
 import oversight2d.states.SettingsState;
@@ -34,12 +35,13 @@ public class Game implements Runnable {
     private Graphics g;    
     
     // States
-    private State gameState;
-    private State menuState;
-    private State settingsState;
+    public State gameState;
+    public State menuState;
+    public State settingsState;
     
     // Input
     private KeyManager keyManager;
+    private MouseManager mouseManager;
     
     // Camera
     private GameCamera gameCamera;
@@ -52,11 +54,16 @@ public class Game implements Runnable {
         this.height = height;              
         this.title = title;
         keyManager = new KeyManager();
+        mouseManager = new MouseManager();
     }
     
     private void init() {
         display = new Display(title, width, height);
         display.getFrame().addKeyListener(keyManager);
+        display.getFrame().addMouseListener(mouseManager);
+        display.getFrame().addMouseMotionListener(mouseManager);
+        display.getCanvas().addMouseListener(mouseManager);
+        display.getCanvas().addMouseMotionListener(mouseManager);
         Assets.init();
                 
         handler = new Handler(this);
@@ -64,7 +71,7 @@ public class Game implements Runnable {
         gameState = new GameState(handler);
         menuState = new MainMenuState(handler);
         settingsState = new SettingsState(handler);
-        State.setState(gameState);
+        State.setState(menuState);
     }
     
     private void tick() {
@@ -133,6 +140,10 @@ public class Game implements Runnable {
     
     public KeyManager getKeyManager() {
         return keyManager;
+    }
+    
+    public MouseManager getMouseManager() {
+        return mouseManager;
     }
     
     public GameCamera getGameCamera() {

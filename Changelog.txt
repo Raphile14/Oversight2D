@@ -4,6 +4,7 @@ Alpha 0.1.0-a5 (04-21-2020)
 - Entity Collision
 - Mouse Input
 - Simple User Interface Manager
+- Optimized Code
 
 Alpha 0.1.0-a4 (04-20-2020)
 - Entity Manager

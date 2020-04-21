@@ -10,6 +10,7 @@ import oversight2d.gfx.Assets;
  */
 public class UIImageButton extends UIObject {
     
+	// UI Image that is a button
     private BufferedImage[] images;
     private ClickListener clicker;
 

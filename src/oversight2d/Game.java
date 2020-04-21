@@ -24,6 +24,8 @@ import oversight2d.states.State;
  */
 public class Game implements Runnable {
     
+	// Main code of the game
+	
     private Display display;    
     private int width, height;
     public String title;
@@ -57,6 +59,7 @@ public class Game implements Runnable {
         mouseManager = new MouseManager();
     }
     
+    // Initializes everything
     private void init() {
         display = new Display(title, width, height);
         display.getFrame().addKeyListener(keyManager);
@@ -74,6 +77,7 @@ public class Game implements Runnable {
         State.setState(menuState);
     }
     
+    // Ticks game states
     private void tick() {
         keyManager.tick();
         
@@ -82,6 +86,7 @@ public class Game implements Runnable {
         }
     }
     
+    // Renders graphics
     private void render() {
         bs = display.getCanvas().getBufferStrategy();
         if(bs == null) {
@@ -103,6 +108,7 @@ public class Game implements Runnable {
         g.dispose();
     }
     
+    // Main game loop
     public void run() {
         
         init();
@@ -138,6 +144,7 @@ public class Game implements Runnable {
         stop();
     }
     
+    // Getters and synchronized methods
     public KeyManager getKeyManager() {
         return keyManager;
     }

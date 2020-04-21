@@ -11,6 +11,8 @@ import oversight2d.tiles.Tile;
  */
 public class GameCamera {
     
+	// Always centers on entity
+	
     private Handler handler;
     private float xOffset, yOffset;
     
@@ -20,6 +22,7 @@ public class GameCamera {
         this.yOffset = yOffset;
     }
     
+    // Check if there is an empty space and tries to avoid it    
     public void checkBlankSpace() {
         if (xOffset < 0) {
             xOffset = 0;
@@ -34,12 +37,14 @@ public class GameCamera {
         }
     }
     
+    // Center the camera on a selected entity
     public void centerOnEntity(Entity e) {
         xOffset = e.getX() - handler.getWidth() / 2 + e.getWidth() / 2;
         yOffset = e.getY() - handler.getHeight() / 2 + e.getWidth() / 2;
         checkBlankSpace();
     }
 
+    // Move the camera based on input
     public void move(float xAmt, float yAmt) {
         xOffset += xAmt;
         yOffset += yAmt;

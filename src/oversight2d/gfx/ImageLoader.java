@@ -12,11 +12,11 @@ import javax.imageio.ImageIO;
  */
 public class ImageLoader {
     
+	// Loads image from file
     public static BufferedImage loadImage(String path) {
         try {
             return ImageIO.read(ImageLoader.class.getResource(path));
-        } catch (IOException ex) {
-            Logger.getLogger(ImageLoader.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
             System.out.println("Can't find image at " + path);
             System.exit(1);
         }

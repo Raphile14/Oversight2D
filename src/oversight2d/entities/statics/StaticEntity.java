@@ -9,6 +9,7 @@ import oversight2d.entities.Entity;
  */
 public abstract class StaticEntity extends Entity {
     
+	// Entity that has no movement. Stationary like rocks and trees
     public StaticEntity(Handler handler, float x, float y, int width, int height) {
         super(handler, x, y, width, height);
     }

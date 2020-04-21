@@ -10,6 +10,7 @@ import oversight2d.Handler;
  */
 public class SettingsState extends State {
 
+	// Settings state of the game
     public SettingsState(Handler handler) {
         super(handler);
     }

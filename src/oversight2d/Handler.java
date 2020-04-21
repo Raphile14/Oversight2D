@@ -11,6 +11,7 @@ import oversight2d.worlds.World;
  */
 public class Handler {
     
+	// Central handler. Stores everything
     private Game game;
     private World world;
     

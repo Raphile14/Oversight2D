@@ -8,6 +8,9 @@ import java.awt.image.BufferedImage;
  */
 public class SpriteSheet {
     
+	// Stores the image as a SpriteSheet
+	// Can crop images
+	
     private BufferedImage sheet;
     
     public SpriteSheet(BufferedImage sheet) {

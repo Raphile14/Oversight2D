@@ -8,10 +8,11 @@ import java.awt.image.BufferedImage;
  */
 public class Assets {
     
+	// Handles the assets of the games. Stores and gets them from image files
+	
     private static final int width = 60, height = 60;
     
-    public static BufferedImage dirt, stone, sand, grass, gold, diamond, coal;
-    
+    public static BufferedImage dirt, stone, sand, grass, gold, diamond, coal;    
     public static BufferedImage[] player_down, player_up, player_left, player_right,
                                   menu;
     
@@ -31,15 +32,7 @@ public class Assets {
             player_left[x] = sheet.crop(x * width, height, width, height);
             player_right[x] = sheet.crop(x * width, height * 2, width, height);
             player_up[x] = sheet.crop(x * width, height * 3, width, height);
-        }
-        
-//        for (int x = 0; x < 8; x++) {         
-//            player_left[x] = sheet.crop(x * width, height, width, height);
-//        }
-        
-        
-//        menu[0] = sheet2.crop(0, 0, width * 3, height * 3);
-//        menu[1] = sheet2.crop(width, 0, width * 3, height * 3);
+        }        
         
         dirt = sheet3.crop(80, 0, 80, 80);
         stone = sheet3.crop(160, 0, 80, 80);

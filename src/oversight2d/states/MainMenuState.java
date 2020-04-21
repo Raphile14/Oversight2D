@@ -14,6 +14,7 @@ import oversight2d.ui.UIManager;
  */
 public class MainMenuState extends State {
     
+	// Main Menu State
     private UIManager uiManager;
     
     public MainMenuState(Handler handler) {
@@ -21,6 +22,7 @@ public class MainMenuState extends State {
         uiManager = new UIManager(handler);
         handler.getMouseManager().setUIManager(uiManager);
         
+        // UI Objects on screen
         uiManager.addObject(new UIImageButton(200, 200, 128, 64, Assets.player_down, new ClickListener() {
             @Override
             public void onClick() {

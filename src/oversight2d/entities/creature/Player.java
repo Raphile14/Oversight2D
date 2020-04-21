@@ -25,6 +25,7 @@ public class Player extends Creature {
     public Player(Handler handler, float x, float y) {
         super(handler, x, y, Creature.DEFAULT_CREATURE_WIDTH, Creature.DEFAULT_CREATURE_HEIGHT);
         
+        // Bounds of player collision
         bounds.x = 16;
         bounds.y = 16;
         bounds.width = 32;
@@ -48,6 +49,7 @@ public class Player extends Creature {
         handler.getGameCamera().centerOnEntity(this);
     }
     
+    // Get input of user from keyboard
     private void getInput() {
         xMove = 0;
         yMove = 0;        
@@ -62,6 +64,7 @@ public class Player extends Creature {
     public void render(Graphics g) {
         g.drawImage(getCurrentAnimationFrame(), (int) (x - handler.getGameCamera().getxOffset()), (int) (y - handler.getGameCamera().getyOffset()), width, height, null);
         
+        // test code
 //        g.setColor(Color.red);
 //        g.fillRect(
 //                (int) (x + bounds.x - handler.getGameCamera().getxOffset()), 
@@ -69,18 +72,15 @@ public class Player extends Creature {
 //                (int) bounds.width, (int) bounds.height);
     }
     
+    // Animation code
     private BufferedImage getCurrentAnimationFrame() {
         if (xMove < 0) {
-//            animLeft.printInt();
             return animLeft.getCurrentFrame();
         } else if (xMove > 0) {
-//            animRight.printInt();
             return animRight.getCurrentFrame();
         } else if (yMove < 0) {
-//            animUp.printInt();
             return animUp.getCurrentFrame();
         } else {
-//            animDown.printInt();
             return animDown.getCurrentFrame();            
         }        
     }

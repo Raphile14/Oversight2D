@@ -12,6 +12,7 @@ public class Animation {
     private long lastTime, timer;
     private BufferedImage[] frames;
 
+    // Handles the animation frames
     public Animation(int speed, BufferedImage[] frames) {
         this.speed = speed;
         this.frames = frames;

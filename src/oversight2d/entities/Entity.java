@@ -23,6 +23,7 @@ public abstract class Entity {
         this.width = width;
         this.height = height;       
         
+        // set a new bound
         bounds = new Rectangle(0, 0, width, height);
     }
     
@@ -30,6 +31,7 @@ public abstract class Entity {
     
     public abstract void render(Graphics g);
     
+    //  Checks if there is a collision
     public boolean checkEntityCollisions(float xOffset, float yOffset) {
         for(Entity e: handler.getWorld().getEntityManager().getEntities()) {
             if(e.equals(this)) continue;
@@ -38,6 +40,7 @@ public abstract class Entity {
         return false;
     }
     
+    // Get the collision bounds
     public Rectangle getCollisionBounds(float xOffset, float yOffset) {
         return new Rectangle((int) (x + bounds.x + xOffset), (int) (y + bounds.y + yOffset), bounds.width, bounds.height);
     }

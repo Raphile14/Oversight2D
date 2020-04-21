@@ -6,5 +6,7 @@ package oversight2d.ui;
  */
 public interface ClickListener {
     
+	// Adds a mouse click event
+	
     public void onClick();
 }

@@ -14,7 +14,8 @@ import oversight2d.worlds.World;
  * @author Raphael Dalangin
  */
 public class GameState extends State {
-    
+	
+	// Ingame state
     private World world;
 
     public GameState(Handler handler) {

@@ -9,6 +9,8 @@ import java.awt.event.KeyListener;
  */
 public class KeyManager implements KeyListener {
     
+	// Controls the keyboard input of the user ingame
+	
     private boolean[] keys;
     public boolean up, down, left, right;
     

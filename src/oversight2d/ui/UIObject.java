@@ -9,6 +9,8 @@ import java.awt.event.MouseEvent;
  * @author Raphael Dalangin
  */
 public abstract class UIObject {
+	
+	// Basis for all UIObject
     protected float x, y;
     protected int width, height;
     protected Rectangle bounds;

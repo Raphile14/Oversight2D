@@ -29,11 +29,13 @@ public abstract class Creature extends Entity {
         yMove = 0;
     }
     
+    // Checks the movement of creature if a collision occurs
     public void move() {
         if (!checkEntityCollisions(xMove, 0.0f)) moveX();
         if (!checkEntityCollisions(0.0f, yMove)) moveY();
     }
     
+    // Move and collision logic of the creature on X axis
     public void moveX() {
         if(xMove > 0) { // Moving Right
             int tx = (int) (x + xMove + bounds.x + bounds.width) / Tile.TILE_WIDTH;
@@ -57,6 +59,7 @@ public abstract class Creature extends Entity {
         }
     }        
     
+    // Move and collision logic of the creature on Y axis
     public void moveY() {
         if (yMove < 0) { // Moving Up
             int ty = (int) (y + yMove + bounds.y) / Tile.TILE_HEIGHT;
@@ -79,6 +82,7 @@ public abstract class Creature extends Entity {
         }
     }
     
+    // Checks if the tile to pass is passable or not
     protected boolean collisionWithTile(int x, int y) {
         return handler.getWorld().getTile(x, y).isSolid();
     }

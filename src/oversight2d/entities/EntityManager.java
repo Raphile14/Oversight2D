@@ -12,6 +12,7 @@ import oversight2d.entities.creature.Player;
  */
 public class EntityManager {
     
+	// Stores all the entities alive in the game
     private Handler handler;
     private Player player;
     private ArrayList<Entity> entities;
@@ -24,6 +25,8 @@ public class EntityManager {
     
     };
     
+    
+    // Initiates the storage. Adds the player
     public EntityManager(Handler handler, Player player) {
         this.handler = handler;
         this.player = player;

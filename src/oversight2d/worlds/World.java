@@ -15,6 +15,7 @@ import oversight2d.utils.Utils;
  */
 public class World {
     
+	// Logic for loading and rendering world
     private Handler handler;
     private int width, height;
     private int spawnX, spawnY;
@@ -87,7 +88,11 @@ public class World {
                 tiles[x][y] = Utils.parseInt(tokens[(x + y * width) + 4]);
             }
         }
-    }    
+    }  
+    
+    private void saveWorld(String path) {
+    	
+    }
 
     public int getWidth() {
         return width;

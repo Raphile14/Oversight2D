@@ -9,6 +9,8 @@ import oversight2d.display.Display;
  * @author Raphael Dalangin
  */
 public class Launcher {
+	
+	// Has the main code. Starts the game
     private static String version = "Oversight Alpha 0.1.0";
     private static int width = 1280, height = 720;
     private static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();

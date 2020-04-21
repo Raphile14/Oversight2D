@@ -11,6 +11,7 @@ import oversight2d.Handler;
  */
 public class UIManager {
     
+	// Stores and controls all UI Objects on screen
     private Handler handler;
     private ArrayList<UIObject> objects;
     

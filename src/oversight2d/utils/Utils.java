@@ -10,6 +10,7 @@ import java.io.IOException;
  */
 public class Utils {
     
+	// Utility class
     public static String loadFileAsString(String path) {
         StringBuilder builder = new StringBuilder();
         

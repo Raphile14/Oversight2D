@@ -11,6 +11,8 @@ import oversight2d.ui.UIManager;
  */
 public class MouseManager implements MouseListener, MouseMotionListener {
     
+	// Controls the mouse input of the user
+	
     private boolean leftPressed, middlePressed, rightPressed;
     private int mouseX, mouseY;
     private UIManager uiManager;

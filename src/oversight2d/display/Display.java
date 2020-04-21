@@ -9,6 +9,8 @@ import javax.swing.JFrame;
  * @author Raphael Dalangin
  */
 public class Display {
+	
+	// The Display window of the software
     
     private JFrame frame;
     private Canvas canvas;
@@ -25,14 +27,31 @@ public class Display {
     }
 
     private void createDisplay() {
+    	// Initiates Display Window
         frame = new JFrame(title);
+        
+        // Sets window size
         frame.setSize(width, height);
+        
+        // Makes the close button fully terminate the program
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        // Makes it so the program cannot be resized by the user
         frame.setResizable(false);
+        
+        // Centers the program
         frame.setLocationRelativeTo(null);
+        
+        // For fullscreen
 //        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        
+        // Removes side bars (for fullscreen)
 //        frame.setUndecorated(true);
-        frame.setVisible(true);        
+        
+        // Makes the frame visible
+        frame.setVisible(true);   
+        
+        // Area where the game is drawn
         canvas = new Canvas();
         canvas.setPreferredSize(new Dimension(width, height));
         canvas.setMaximumSize(new Dimension(width, height));
@@ -42,6 +61,8 @@ public class Display {
         frame.pack();
     }
     
+    
+    // Getters
     public Canvas getCanvas() {
         return canvas;
     }

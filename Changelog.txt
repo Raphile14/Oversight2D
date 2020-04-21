@@ -1,5 +1,8 @@
 Oversight 2D
 
+Alpha 0.1.0-a6 (04-21-2020)
+- Partial Procedural World Generation
+
 Alpha 0.1.0-a5 (04-21-2020)
 - Entity Collision
 - Mouse Input

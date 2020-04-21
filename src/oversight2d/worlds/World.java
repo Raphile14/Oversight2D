@@ -1,7 +1,6 @@
 package oversight2d.worlds;
 
 import java.awt.Graphics;
-import oversight2d.Game;
 import oversight2d.Handler;
 import oversight2d.entities.EntityManager;
 import oversight2d.entities.creature.Player;
@@ -88,11 +87,7 @@ public class World {
                 tiles[x][y] = Utils.parseInt(tokens[(x + y * width) + 4]);
             }
         }
-    }  
-    
-    private void saveWorld(String path) {
-    	
-    }
+    }         
 
     public int getWidth() {
         return width;
